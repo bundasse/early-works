@@ -1,0 +1,27 @@
+[
+    {
+        "Navi": ["BIFAN","괴담 캠퍼스","B.I.G","비욘드 리얼리티","출품/지원","역대 영화제","커뮤니티"],
+        "SubMenu":[
+            ["소개","페스티벌 아이덴티티","프로그래머","프로그램 섹션","시상","스폰서모집","영화제 후원","조직구성"],
+            ["괴담 캠퍼스","괴담 창작지원","괴담 아카이브"],
+            ["B.I.G","NAFF 프로젝트 마켓 2022","인더스트리 서비스 2022","NAFF 환상영화학교 2022","메이드 인 아시아 2022"],
+            ["비욘드 리얼리티","BIFAN x Unity Short Film Challenge","Digital November"],
+            ["상영작 출품","잇 프로젝트 출품","칸 판타스틱 7 출품","XR 작품 출품","환상영화학교 지원","괴담 창작지원"],
+            ["1997(1회)~2022(26회)","역대 상영작 검색"],
+            ["공지사항","BIFAN 뉴스","뉴스레터","2022 상영작 리뷰","FAQ"]
+        ]
+
+    },
+    {
+        "Navi": ["BIFAN","Goedam Campus","B.I.G","Beyond Reality","Submission","Archive","Community"],
+        "SubMenu":[
+            ["Introduction","Festival Identity","Programer","Program Section","Awards","Organization"],
+            ["Goedam Campus","Goedam Creation Support","Goedam Archive"],
+            ["B.I.G","NAFF Project Market 2022","Industry Service 2022","NAFF Fantastic Film School 2022","Made in Asia 2022"],
+            ["Beyond Reality","BIFAN x Unity Short Film Challenge","Digital November"],
+            ["Film Submission","It Project Submission","XR content Submission","Fantastic Film School Application"],
+            ["1997(1st)~2022(26th)","Archive Film Search"],
+            ["Notice","News","Guest Portraits","FAQ"]
+        ]
+    }
+]

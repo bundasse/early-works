@@ -1,26 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <NaviPage :navContents="navContents[lang]" @lang="lang=$event" :lang="lang"/>
+  <MainPage />
+  <FooterPage :contents="contents[lang]" :lang="lang"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import NaviPage from './components/Navi.vue'
+import MainPage from './components/Main.vue'
+import FooterPage from './components/Footer.vue'
+import navi from './assets/nav.json'
+import data from './assets/Data.json'
 export default {
   name: 'App',
+  data() {
+    return {
+      lang: 0,
+      contents:data,
+      navContents: navi
+    }
+  },
   components: {
-    HelloWorld
-  }
+    NaviPage,
+    MainPage,
+    FooterPage
+  },
+  mounted() {
+    this.lang = localStorage.getItem("language");
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
