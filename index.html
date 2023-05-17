@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 그 이상의 감동. CGV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+        <!-- jquery-->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <!-- slide -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!--상단 배너-->
+    <div class="top_banner">
+        <a href="#none" class="bannerLink">	
+            <img src="images/ad_top.jpg" alt="천룡팔부-교봉전">
+        </a>
+        <a href="#none" class="btnClose"><img src="images/button/adtop_close.png" alt="배너 닫기"></a>
+    </div>
+    <!-- 스킵 내비게이션 -->
+    <div class="skip_nav">
+        <a href="#gnb">주요 메뉴 바로가기</a>
+        <a href="#lnb">로그인&#47;회원 가입 바로가기</a>
+        <a href="#ranking">현재 상영 영화 순위 바로가기</a>
+        <a href="#event">이벤트 바로가기</a>
+        <a href="#board">공지사항, 고객센터 바로가기</a>
+        <a href="#footer">사이트 이용약관 및 CGV 주소 바로가기</a>
+    </div>
+    <!-- 헤더 -->
+    <header>
+        <div class="header_top clearfix">
+            <h1><a href="#"><img src="images/logo.gif" alt="CGV"></a>CULTUREPLEX</h1>
+            <div class="lnb" id="lnb">
+                <a href="#"><img src="images/ad_header.jpg" alt="현대카드 상시 6천 M포인트 사용!"></a>
+                <ul class="clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="images/button/lnb_login.gif" alt="로그인">
+                            <span>로그인</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/button/lnb_join.gif" alt="회원가입">
+                            <span>회원가입</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/button/lnb_mypage.gif" alt="마이 CGV">
+                            <span>MY CGV</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/button/lnb_customer.gif" alt="고객센터">
+                            <span>고객센터</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav>
+            <div class="navi clearfix">
+                <div class="nav_contents">
+                    <div class="gnb" id="gnb">
+                        <ul class="clearfix">
+                            <li><a href="#">영화</a>
+                                <ul><a href="#">영화</a>
+                                    <li><a href="#">무비차트</a></li>
+                                    <li><a href="#">아트하우스</a></li>
+                                    <li><a href="#">ICECON</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">극장</a>
+                                <ul><a href="#">극장</a>
+                                    <li><a href="#">CGV 극장</a></li>
+                                    <li><a href="#">특별관</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">예매</a>
+                                <ul><a href="#">예매</a>
+                                    <li><a href="#">빠른예매</a></li>
+                                    <li><a href="#">상영스케쥴</a></li>
+                                    <li><a href="#">English Ticketing</a></li>
+                                    <li><a href="#">English Schedule</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">스토어</a>
+                                <ul><a href="#">스토어</a>
+                                    <li><a href="#">패키지</a></li>
+                                    <li><a href="#">기프트카드</a></li>
+                                    <li><a href="#">콤보</a></li>
+                                    <li><a href="#">팝콘</a></li>
+                                    <li><a href="#">음료</a></li>
+                                    <li><a href="#">스낵</a></li>
+                                    <li><a href="#">플레이존</a></li>
+                                    <li><a href="#">씨네샵 &rsaquo;</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">이벤트</a>
+                                <ul><a href="#">이벤트</a>
+                                    <li><a href="#">SPECIAL</a></li>
+                                    <li><a href="#">영화/예매</a></li>
+                                    <li><a href="#">멤버십/CLUB</a></li>
+                                    <li><a href="#">CGV 극장별</a></li>
+                                    <li><a href="#">제휴할인</a></li>
+                                    <li><a href="#">당첨자 발표</a></li>
+                                    <li><a href="#">종료된 이벤트</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">혜택</a>
+                                <ul><a href="#">혜택</a>
+                                    <li><a href="#">CGV 할인정보</a></li>
+                                    <li><a href="#">CLUB 서비스</a></li>
+                                    <li><a href="#">VIP 라운지</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 검색바 -->
+                    <div class="search">
+                        <input type="search" placeholder="천룡팔부-교봉전">
+                        <button class="btn_search" type="submit"><img src="images/button/search.gif" alt="검색"></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- //헤더 끝 -->
+    <!-- 비주얼 -->
+    <div class="visual">
+        <div class="contents">
+            <video muted autoplay loop>
+                <source src="visual.mp4" type="video/mp4">
+                <strong>Your browser does not support the video tag.</strong>
+            </video>
+            <div class="video_text">
+                <p>서치 2</p>
+                <span>서치 2</span><br>
+                <span>&lsaquo;서치&rsaquo; 제작진의 두번째 추적 스릴러</span>
+                <div class="visual_control clearfix">
+                    <a href="#">상세보기</a>
+                    <a href="#none" class="video_play"></a>
+                    <a href="#none" class="video_pause"></a>
+                    <a href="#" class="video_mute"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 메인 -->
+    <main>
+        <section class="ranking" id="ranking">
+            <div class="contents">
+            <!-- 영화 랭킹 -->
+                <h2 class="on">무비차트</h2>
+                <!-- 무비차트 -->
+                <ol class="rank_chart on">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/01.jpg" alt="방탄소년단: 옛 투 컴 인 시네마">
+                                    <div class="movieinfo_rank">1</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_all.png" alt="전연령 관람가"></div>
+                                    <div class="movieinfo_type">
+                                        <img src="images/movie/movieinfo/type_4dx.png" alt="4dx">
+                                        <img src="images/movie/movieinfo/type_screenx.png" alt="스크린 X">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">방탄소년단: 옛 투 컴 인 시네마 </p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> 99%</span>
+                                    <span>예매율 25.0%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/02.jpg" alt="아바타-물의 길">
+                                    <div class="movieinfo_rank">2</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_all.png" alt="전연령 관람가"></div>
+                                    <div class="movieinfo_type">
+                                        <img src="images/movie/movieinfo/type_4dx.png" alt="4dx">
+                                        <img src="images/movie/movieinfo/type_screenx.png" alt="스크린 X">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">아바타-물의 길</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_great.png" alt="실관람평지수"> 96%</span>
+                                    <span>예매율 23.0%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/03.jpg" alt="상견니">
+                                    <div class="movieinfo_rank">3</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_15.png" alt="15세미만 관람불가"></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">상견니</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> 99%</span>
+                                    <span>예매율 25.0%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/04.jpg" alt="더 퍼스트 슬램덩크">
+                                    <div class="movieinfo_rank">4</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_12.png" alt=""></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">더 퍼스트 슬램덩크</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_great.png" alt="실관람평지수"> 97%</span>
+                                    <span>예매율 6.3%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/05.jpg" alt="메간">
+                                    <div class="movieinfo_rank">5</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_15.png" alt="15세미만 관람불가"></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">메간</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> 99%</span>
+                                    <span>예매율 5.4%</span>
+                                </p>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/01.jpg" alt="방탄소년단: 옛 투 컴 인 시네마">
+                                    <div class="movieinfo_rank">6</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_all.png" alt="전연령 관람가"></div>
+                                    <div class="movieinfo_type">
+                                        <img src="images/movie/movieinfo/type_4dx.png" alt="4dx">
+                                        <img src="images/movie/movieinfo/type_screenx.png" alt="스크린 X">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">방탄소년단: 옛 투 컴 인 시네마 </p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> 99%</span>
+                                    <span>예매율 25.0%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/02.jpg" alt="아바타-물의 길">
+                                    <div class="movieinfo_rank">7</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_all.png" alt="전연령 관람가"></div>
+                                    <div class="movieinfo_type">
+                                        <img src="images/movie/movieinfo/type_4dx.png" alt="4dx">
+                                        <img src="images/movie/movieinfo/type_screenx.png" alt="스크린 X">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">아바타-물의 길</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_great.png" alt="실관람평지수"> 96%</span>
+                                    <span>예매율 23.0%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/03.jpg" alt="상견니">
+                                    <div class="movieinfo_rank">8</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_15.png" alt="15세미만 관람불가"></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">상견니</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> 99%</span>
+                                    <span>예매율 25.0%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/04.jpg" alt="더 퍼스트 슬램덩크">
+                                    <div class="movieinfo_rank">9</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_12.png" alt=""></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">더 퍼스트 슬램덩크</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_great.png" alt="실관람평지수"> 97%</span>
+                                    <span>예매율 6.3%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/chart/05.jpg" alt="메간">
+                                    <div class="movieinfo_rank">10</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_15.png" alt="15세미만 관람불가"></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">메간</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> 99%</span>
+                                    <span>예매율 5.4%</span>
+                                </p>
+                            </li>
+                        </div>
+                    </div>
+                    <button class="swiper-button-prev"></button>
+                    <button class="swiper-button-next"></button>
+                </ol>
+                <h2>상영예정작</h2>
+                <!-- 상영예정작 -->
+                <ol class="rank_reser">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/reser/01.jpg" alt="마루이 비디오">
+                                    <div class="movieinfo_rank">1</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_none.png" alt="관람연령 미정"></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">마루이 비디오</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> 98%</span>
+                                    <span>예매율 0.0%</span>
+                                </p>
+                            </li class="swiper-slide"> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/reser/02.jpg" alt="빌리 아일리시 - 라이브 앳 디 오투 (확장판)">
+                                    <div class="movieinfo_rank">2</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_12.png" alt="12세미만 관람불가"></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">빌리 아일리시 - 라이브 앳 디 오투 (확장판)</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> 99%</span>
+                                    <span>예매율 0.3%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/reser/03.jpg" alt="다나카 1st 내한콘서트 - 생중계">
+                                    <div class="movieinfo_rank">3</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_15.png" alt="15세미만 관람불가"></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">다나카 1st 내한콘서트 - 생중계</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> 95%</span>
+                                    <span>예매율 1.0%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/reser/04.jpg" alt="[사이다경제] 안정적인 투자를 원한다면 돈의 흐름에 올라타라!">
+                                    <div class="movieinfo_rank">4</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_all.png" alt="전연령 관람가"></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">[사이다경제] 안정적인 투자를 원한다면 돈의 흐름에 올라타라!</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> ?</span>
+                                    <span>예매율 0.0%</span>
+                                </p>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="images/movie/reser/05.jpg" alt="별 볼일 없는 인생">
+                                    <div class="movieinfo_rank">5</div>
+                                    <div class="movieinfo_age"><img src="images/movie/movieinfo/age_none.png" alt="관람연령 미정"></div>
+                                    <div class="movieinfo_type">
+                                    </div>
+                                </a>
+                                <p class="movie_btn">
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </p>
+                                <p class="movie_title">별 볼일 없는 인생</p>
+                                <p class="movie_score">
+                                    <span><img src="images/movie/egg_preegg.png" alt="사전기대지수"> ?</span>
+                                    <span>예매율 0.0%</span>
+                                </p>
+                            </li>
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </ol>
+                <a class="btn_slide"></a>
+                <p>
+                    <a href="#" class="link_all" title="무비차트 전체보기">전체보기</a>
+                </p>
+            </div>
+        </section>
+            <!-- //영화 랭킹 끝 -->
+            <!-- 이벤트 -->
+        <div class="contents">
+            <section class="event" id="event">
+                <h3>EVENT</h3>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <p class="pic"><img src="images/event_01.jpg" alt="CGV 플러스. CGV & 티빙 혜택을 매월 동시에 즐기세요!"></p>
+                            <p class="text">
+                                <span>CGV x TVING 월정기 혜택 [CGV PLUS]</span>
+                                <span>2022.12.02~2032.12.02</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="pic"><img src="images/event_02.jpg" alt="게임에서 이기면 〈교섭〉 배우들이 예매권 400장 쏜다! 황정민 현빈 강기영"></p>
+                            <p class="text">
+                                <span>★미니게임천국★ [교섭] 예매권 이벤트</span>
+                                <span>2023.01.05~2023.01.16</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="pic"><img src="images/event_03.jpg" alt="우리 동네 CGV 카카오톡 채널 추가하고 영화 할인 받자!"></p>
+                            <p class="text">
+                                <span>우리 동네 CGV 카카오톡 채널 추가하자!</span>
+                                <span>2022.12.19~2023.01.17</span>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <p>
+                    <a href="#" class="slide_pause"></a>
+                    <a href="#" class="link_all" title="이벤트 전체보기">전체보기</a>
+                </p>
+            </section>
+            <!-- 특별관 -->
+            <section class="cinema clearfix">
+                <h3>특별관</h3>
+                <div class="cin_img">
+                    <a href="#"><img src="images/cinema_01.png" alt="스위트 시네마. 호텔 컨셉의 프리미엄관"></a>
+                </div>
+                <div class="cin_menu">
+                    <ul>
+                        <li><a href="#" class="cine_menu" title="Suite cinema 특별관 소개">SUITE CINEMA<span>#호텔 컨셉의 프리미엄관</span></a></li>
+                        <li><a href="#" class="cine_menu" title="Cine&Livingroom 특별관 소개">CINE & LIVINGROOM<span>#신개념 소셜 상영관</span></a></li>
+                        <li><a href="#" class="cine_menu" title="4DX 특별관 소개">4DX<span>#모션시트 #오감체험</span></a></li>
+                        <li><a href="#" class="cine_menu" title="Cine de chef 특별관 소개">CINE de CHEF<span>#쉐프가 있는 영화관</span></a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#" class="link_all" title="특별관 전체보기">전체보기</a>
+                </p>
+            </section>
+            <!-- 구매 탭 -->
+            <section class="shop clearfix">
+                <article>
+                    <h4>영화관람권</h4>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="shop_img"><img src="images/shop/voucher_01.jpg" alt="CGV 영화관람권"></div>
+                                <div class="shop_text">
+                                    <span>CGV 영화관람권</span>
+                                    <span>12,000원</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <div class="shop_img"><img src="images/shop/voucher_02.jpg" alt="CGV 골드클래스"></div>
+                            <div class="shop_text">
+                                <span>CGV 골드클래스</span>
+                                <span>40,000원</span>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <div class="shop_img"><img src="images/shop/voucher_03.jpg" alt="4DX 관람권"></div>
+                            <div class="shop_text">
+                                <span>4DX관람권</span>
+                                <span>19,000원</span>
+                            </div>
+                          </a>
+                        </li>
+                    </ul>
+                    <p><a href="#">더보기</a></p>
+                </article>
+                <article>
+                    <h4>기프트카드</h4>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            <div class="shop_img"><img src="images/shop/giftcard_01.jpg" alt="PACONNIE A형"></div>
+                            <div class="shop_text">
+                                <span>PACONNIE A형</span>
+                                <span>금액충전형</span>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <div class="shop_img"><img src="images/shop/giftcard_02.jpg" alt="PACONNIE B형"></div>
+                            <div class="shop_text">
+                                <span>PACONNIE B형</span>
+                                <span>금액충전형</span>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <div class="shop_img"><img src="images/shop/giftcard_03.jpg" alt="PACONNIE C형"></div>
+                            <div class="shop_text">
+                                <span>PACONNIE C형</span>
+                                <span>금액충전형</span>
+                            </div>
+                          </a>
+                        </li>
+                    </ul>
+                    <p><a href="#">더보기</a></p>
+                </article>
+                <article>
+                    <h4>음료</h4>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            <div class="shop_img"><img src="images/shop/drink_01.jpg" alt="탄산음료 M사이즈"></div>
+                            <div class="shop_text">
+                                <span>탄산음료(M)</span>
+                                <span>2,500원</span>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <div class="shop_img"><img src="images/shop/drink_02.jpg" alt="따뜻한 아메리카노"></div>
+                            <div class="shop_text">
+                                <span>아메리카노(HOT)</span>
+                                <span>3,500원</span>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <div class="shop_img"><img src="images/shop/drink_03.jpg" alt="아이스 아메리카노"></div>
+                            <div class="shop_text">
+                                <span>아메리카노(ICE)</span>
+                                <span>4,000원</span>
+                            </div>
+                          </a>
+                        </li>
+                    </ul>
+                    <p><a href="#">더보기</a></p>
+                </article>
+            </section>
+            <!-- 게시판 -->
+            <section class="board clearfix" id="board">
+                <article class="notice">
+                    <div class="not_board clearfix">
+                        <h5>공지사항</h5>
+                        <a href="#"><span>[기타]개인정보처리방침 개정 안내 (1/16 字 시행)</span></a>
+                        <p class="more"><a href="#">더보기</a></p>
+                    </div>
+                    <div class="help clearfix">
+                        <h5>고객센터</h5>
+                        <span>
+                            <strong>1544-1122</strong>
+                            고객센터 운영시간 (평일 09:00~18:00)<br>
+                            업무시간 외 자동응답 안내 가능합니다.
+                        </span>
+                        <p>
+                            <a href="#">FAQ</a>
+                            <a href="#">1:1 문의</a>
+                            <a href="#">대관/단체 문의</a>
+                        </p>
+                    </div>
+                </article>
+                <article class="app">
+                    <h5>앱 다운로드</h5>
+                    <span>CGV앱에서 더 편리하게 이용하세요</span>
+                    <img src="images/img_qrcode.gif" alt="QR 코드">
+                    <span>QR코드를 스캔하고<br>앱설치 페이지로 바로 이동하세요</span>
+                </article>
+                <article class="ad">
+                    <div class="swiper adSwiper">
+                        <div class="swiper-wrapper">
+                            <a class="swiper-slide"><img src="images/ad_slide/01.jpg" alt="CGV 기프트 카드. 영화, 팝콘, 굿즈까지!"></a>
+                            <a class="swiper-slide"><img src="images/ad_slide/02.jpg" alt="페이머니 카드3. 처음이면 특별하게 보세요."></a>
+                        </div>
+                        <button class="autoplay slide_play"></button>
+                        <button class="autoplay slide_pause"></button>
+                    </div>                    
+                </article>
+            </section>
+        </div>
+    </main>
+    <!-- //메인 끝 -->
+    <!-- 광고 -->
+    <div class="ad_bottom">
+        <div class="contents">
+           </div>
+    </div>
+    <!-- 사이드 버튼 -->
+    <div class="aside_btn">
+        <a href="#">예매하기</a>
+        <a href="#"><img src="images/button/btn_goup.gif" alt="페이지 상단으로 이동"></a>
+    </div>
+    <!-- 푸터 -->
+    <footer id="footer">
+        <div class="contents">
+            <div class="foot_nav">
+                <ul class="clearfix">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">IR</a></li>
+                    <li><a href="#">채용정보</a></li>
+                    <li><a href="#">광고/제휴/출점문의</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">편성기준</a></li>
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="#">법적고지</a></li>
+                    <li><a href="#">이메일주소무단수집거부</a></li>
+                    <li><a href="#">윤리경영</a></li>
+                    <li><a href="#">사이버감사실</a></li>
+                </ul>
+            </div>
+            <div class="company_info">
+                <address>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)</address>
+                <dl class="clearfix">
+                    <dt>대표이사</dt> <dd>허민회</dd>
+                    <dt>사업자등록번호</dt> <dd>104-81-45690</dd>
+                    <dt>통신판매업신고번호</dt> <dd>2017-서울용산-0662 <a href="#">사업자정보확인</a></dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>호스팅사업자</dt> <dd>CJ올리브네트웍스</dd>
+                    <dt>개인정보보호 책임자</dt> <dd>심준범</dd>
+                    <dt>대표이메일</dt> <dd>cjcgvmaster@cj.net</dd>
+                </dl>
+                <p class="copyright">© CJ CGV. All Rights Reserved</p>
+                <!--계열사 사이트 바로가기 메뉴-->
+                <div class="family_site">
+                    <select class="family_list" name="원하는 사이트를 선택 후 GO 버튼을 누르면 해당 사이트가 열립니다.">
+                        <option value class="family_title">계열사 바로가기</option>
+                        <optgroup label="CJ그룹">
+                            <option value="http://www.cj.net/">CJ주식회사</option>
+                        </optgroup>
+                        <optgroup label="식품 & 식품서비스">
+                            <option value="https://www.cj.co.kr/kr/index">CJ제일제당</option>
+                            <option value="https://www.cjfoodville.co.kr/main.asp">CJ푸드빌</option>    
+                            <option value="http://www.cjfreshway.com/index.jsp">CJ프레시웨이</option>    
+                        </optgroup>
+                        <optgroup label="생명공학">
+                            <option value="https://www.cj.co.kr/kr/about/business/bio">CJ제일제당 BIO사업부문</option>
+                            <option value="https://www.cj.co.kr/kr/about/business/bio">CJ Feed&Card</option>    
+                        </optgroup>
+                        <optgroup label="물류 & 신유통">
+                            <option value="https://www.cjlogistics.com/ko/main">CJ대한통운</option>
+                            <option value="http://www.cjenc.co.kr/kr/Default.asp">CJ대한통운 건설부문</option>
+                            <option value="https://www.oliveyoung.co.kr/store/company/brandStory.do">CJ올리브영</option>
+                            <option value="https://www.cjolivenetworks.co.kr:449/">CJ올리브네트웍스</option>
+                            <option value="https://www.cjoshopping.com:9002/index.asp">CJ ENM 커머스부문</option>
+                        </optgroup>
+                        <optgroup label="엔터테인먼트 & 미디어">
+                            <option value="https://www.cjenm.com/ko/">CJ ENM 엔터테인먼트부문</option>
+                            <option value="http://corp.cgv.co.kr/">CJ CGV</option>    
+                        </optgroup>
+                    </select>
+                    <button type="button" class="family_go">GO</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //푸터 끝 -->
+    <script src="js/script.js"></script>
+</body>
+</html>
