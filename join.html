@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가입하기 - todo mate</title>
+    <link rel="stylesheet" href="css/loginjoin.css">
+</head>
+<body>
+    <!-- 탑 메뉴 -->
+    <div class="topMenu">
+        <a class="goBack" href="#none" onclick="goBack();"></a>
+        <a href="#"><h2>가입하기</h2></a>
+    </div>
+    <!-- 회원가입 창 -->
+    <div class="container">
+        <input type="email" id="userId" placeholder="이메일">
+        <input type="password" id="userPwd" placeholder="비밀번호(영어 소문자+숫자 6자리 이상)">
+        <div id="pwdCheck"><img src="images/icon_pwdCheck_f.png"></div>
+        <button id="btnAccept" class="join" disabled>확인</button>
+        <p class="joinText">가입하면:</p>
+        <ul>
+            <li><span>다른 기기에서 로그인 가능합니다.</span></li>
+            <li><span>다른 사용자들과 함께할 수 있습니다.</span></li>
+        </ul>
+        <p class="joinText">
+            가입과 동시에 투두메이트의 <a href="#">이용약관</a>과 <a href="#">개인보호 정책</a>에 동의하는 것으로 간주합니다.
+        </p>
+        <input type="checkbox" id="ageCheck"><label for="ageCheck">14세 이상입니다.</label>
+    </div>
+    <!-- 회원가입 경고창 -->
+    <div id="loginAlert">
+    </div>
+    <!-- 자바 스크립트 -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/loginjoin.js"></script>
+</body>
+</html>

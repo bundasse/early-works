@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이메일 변경 - todo mate</title>
+    <link rel="stylesheet" href="css/loginjoin.css">
+</head>
+<body>
+    <!-- 탑 메뉴 -->
+    <div class="topMenu">
+        <a class="goBack" href="#none" onclick="goBack();"></a>
+        <a href="#"><h2>이메일 변경</h2></a>
+    </div>
+    <!-- 로그인 창 -->
+    <div class="container">
+        <input type="email" id="userId" placeholder="(이전 입력한 메일주소)">
+        <button onclick="goBack();">확인</button>
+        <!--본래 새로운 값을 userId에 넣어 인증메일을 재발송하고 확인하는 절차가 필요하나,
+        이 과제에서는 인증여부를 확인하는 절차가 구현되지 않았으므로 그냥 이전 페이지로 이동함.-->
+    </div>
+    <!-- 로그인 경고창 -->
+    <div id="loginAlert">
+    </div>
+    <!-- 자바 스크립트 -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/loginjoin.js"></script>
+</body>
+</html>

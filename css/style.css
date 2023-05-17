@@ -1,0 +1,400 @@
+/* 웹폰트 */
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-style: bold;
+}
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'NanumSquare', sans-serif;
+    font-weight: 600;
+    word-spacing: -0.7px;
+    letter-spacing: -0.6px;
+}
+a{
+    color:inherit;
+}
+/* clearfix */
+.clearfix::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+/* 앱 사용안내 모달 */
+.modal{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background:rgba(0, 0, 0, 0.7);
+}
+body > .on{
+    display: block;
+}
+.modal .modal_inner1{position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 100px;
+    left: 220px;
+    padding: 10px;
+    background-color: white;
+}
+.modal .modal_inner1:after {
+    border-top: 0px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 60px;
+}
+.modal .modal_inner2{
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    top:320px;
+    left:20px;
+    padding: 10px;
+    background-color: white;
+}
+.modal .modal_inner2:after {
+    border-top: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 0px solid transparent;
+    content: "";
+    position: absolute;
+    top: 120px;
+}
+/* 탑 메뉴 */
+.topMenu{
+    position: relative;
+    display: flex;
+    width: 424px;
+    height: 75px;
+    margin: 0 auto;
+    justify-content: right;
+    align-items: flex-end;
+}
+.topMenu button{
+    width: 27px;
+    height: 27px;
+    margin-left: 23px;
+    text-indent:-10000px;
+    background-color: none;
+    border: 0;
+    cursor: pointer;
+}
+.topMenu .search{
+    background: url('../images/btn_search.gif');
+}
+.topMenu .notification{
+    background: url('../images/btn_notifications.gif');
+}
+.topMenu .gnb{
+    background: url('../images/btn_gnb.gif');
+}
+/* 팔로잉 유저 목록 */
+.userList{
+    width: 375px;
+    height: 66px;
+    margin: 30px auto 43px;
+}
+.userList ul li{
+    float: left;
+    margin-right: 17px;
+}
+.userList ul li a{
+    display: block;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 46px;
+    background: #f5f5f5;
+    border: 1px solid #f3f3f3;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.userList ul li a img{
+    width: 46px;
+    height: 46px;
+}
+.userList ul li .on{
+    border: 1px solid #000;
+}
+.userList ul li:last-child a{
+    background: url('../images/btn_propic_last.png') no-repeat center center #f5f5f5;
+}
+.userList ul li p{
+    width: 46px;
+    margin-top: 5px;
+    font-size: 15px;
+    color: #818181;
+    text-align: center;
+}
+/* 메인 */
+.container{
+    width: 375px;
+    margin: 0 auto;
+    position: relative;
+}
+/* 유저 정보 */
+.userProfile{
+    width: 100%;
+    height: 55px;
+    margin-bottom: 25px;
+}
+.userProfile .myPic{
+    float: left;
+    width: 54px;
+    height: 54px;
+    background: #f5f5f5;
+    border: 1px solid #f3f3f3;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.userProfile .myText{
+    float: left;
+    width: 250px;
+    margin: 0 10px;
+}
+.userProfile .myText p{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.userProfile .myText span{
+    font-size: 14px;
+    color: #888;
+}
+.userProfile .writeDiary{
+    float: right;
+}
+.userProfile .writeDiary a img{
+    width: 36px;
+    height: 36px;
+    margin-top: 8px;
+}
+/* 달력 */
+.calender{
+    margin-bottom: 10px;
+}
+.calender h3{
+    float: left;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 30px;
+}
+.calender .calTab{
+    float: right;
+    position: relative;
+    width: 122px;
+    line-height: 30px;
+}
+.calender .calTab img{
+    margin-right: 20px;
+}
+.calender .calTab img:first-child{
+    margin-right: 28px;
+}
+.calender .calTab div{
+    display: none;
+    position: absolute;
+    top: -3px;
+    right: 0;
+    padding: 0 25px 0 7px;
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.calender .calTab div:first-of-type{
+    background: url('../images/btn_cal_open.gif') no-repeat 30px 12px #f5f5f5;
+}
+.calender .calTab div:last-of-type{
+    background: url('../images/btn_cal_close.gif') no-repeat 30px 12px #f5f5f5;
+}
+.calender .calTab .on{
+    display: block;
+}
+.calender table{
+    width: 100%;
+    display: table;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.calender table thead{
+    line-height: 30px;
+}
+.calender table td{
+    display: table-cell;
+}
+.calender table .calDate td{
+    font-weight: 900;
+    height: 25px;
+}
+.calender table .calDate .today{
+    background: url('../images/bg_today.gif') no-repeat center center;
+    color: white;
+}
+.calender table .calWork td{
+    width: 26px;
+    height: 26px;
+    background: url('../images/bg_cal.gif') no-repeat center center;
+}
+/* 탭 메뉴 */
+.tabBar{
+    position: relative;
+    width: 142px;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 auto;
+    background: #f5f5f5;
+    border: 1px solid #f4f4f4;
+    border-radius: 20px;
+    text-align: center;
+}
+.tabBar label:nth-of-type(1)::after{
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 10px;
+    margin: 0 10px;
+    background: #9b9b9b;
+}
+.tabBar input[type="radio"] + label{position:relative; color: #8b8b8b; font-weight: 900;}
+.tabBar input[type="radio"]{position:absolute; left:-999999px;}
+.tabBar input[type="radio"] + label::before{
+  content:'';
+  display:inline-block;
+  position:relative;
+  width:5px;
+  height:5px;
+  margin:0 4px 0 0;
+  background: #cecece;
+  border:1px solid #cecece;
+  border-radius:3px;
+}
+.tabBar input[type="radio"]:checked + label{
+    color: #000;
+}
+.tabBar input[type="radio"]:checked + label::before{
+  background:#31e960;
+  border: 1px solid #31e960;
+}
+/* 할 일 목록 */
+.work a .workCategory{
+    position: relative;
+    display: inline-block;
+    padding: 10px 40px;
+    background: #f5f5f5;
+    border: 1px solid #f4f4f4;
+    border-radius: 20px;   
+}
+.work a .workCategory span::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    width: 20px;
+    height: 20px;
+    background: url('../images/btn_work_icon.gif') no-repeat;
+}
+.work a .workCategory span::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 9px;
+    right: 12px;
+    width: 21px;
+    height: 21px;
+    background: url('../images/btn_work_add.gif') no-repeat;
+}
+.work #workList{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f6f6f6;
+    margin-bottom: 10px;
+}
+.work #workList li{
+    position: relative;
+    padding: 5px 0;
+    margin-bottom: 2px;
+}
+.work #workList li label span{
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    margin-left: 25px;
+}
+.work #workList li label i{
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    cursor: pointer;
+}
+.work #workList li label i:after{
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url('../images/btn_worklist_icon.gif') no-repeat center center;
+    position: absolute; top: -14px; left: 0;
+}
+.work #workList li label input[type="checkbox"]:checked + i:after{
+    background: url('../images/btn_worklist_icon_on.gif') no-repeat center center;
+}
+.work #workList li label input[type="checkbox"]{ position: absolute; left: -999em; }
+
+.work #workList li::after{
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    background: url('../images/btn_worklist_more.gif') no-repeat center center;
+}
+.work #workList li label input[type="text"]{
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    width: 50%;
+    line-height: 20px;
+    margin-left: 30px;
+    font-size: 15px;
+    outline: none;
+    border-width: 0 0 1px;
+}
+.work #workList li label input[type="submit"]{
+    padding:3px;
+}
+.work .more{
+    float: right;
+}
+.work .more a{
+    display: block;
+    width: 33px;
+    height: 25px;
+    text-indent: -999999px;
+    background: url('../images/btn_work_more.gif') no-repeat center center;
+}
+
+@media screen and (max-width: 768px) {
+    .topMenu{width: 97vw;}
+    .userList{width: 97vw;}
+    .container{width: 97vw;}
+    .userProfile .myText{width: 60%;}
+}
