@@ -1,5 +1,4 @@
 <template>
-    {{ navContents }}
   <NaviPage :navContents="navContents[lang]" @lang="lang=$event" :lang="lang"/>
   <MainPage />
   <FooterPage :contents="contents[lang]" :lang="lang"/>
