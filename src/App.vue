@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import NaviPage from './components/Navi.vue'
-import MainPage from './components/Main.vue'
-import FooterPage from './components/Footer.vue'
+import NaviPage from './components/NaviPage.vue'
+import MainPage from './components/MainPage.vue'
+import FooterPage from './components/FooterPage.vue'
 import navi from './assets/nav.json'
 import data from './assets/Data.json'
 export default {
