@@ -1,4 +1,5 @@
 <template>
+    {{ navContents }}
   <NaviPage :navContents="navContents[lang]" @lang="lang=$event" :lang="lang"/>
   <MainPage />
   <FooterPage :contents="contents[lang]" :lang="lang"/>
@@ -25,7 +26,9 @@ export default {
     FooterPage
   },
   mounted() {
-    this.lang = localStorage.getItem("language");
+    this.lang = (localStorage.getItem("language") ?? 0)
+
+    
   },
 }
 </script>
