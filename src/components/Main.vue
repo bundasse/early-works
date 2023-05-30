@@ -1,6 +1,6 @@
 <template>
     <!-- 슬라이드 -->
-    <div class="w-full h-2/4">
+    <div class="lg:w-full lg:h-2/4">
         <swiper
         :slides-per-view="1"
         :space-between="50"
@@ -14,16 +14,16 @@
         }"
         :modules="Modules" :loop="true"
         class="mySwiper">
-            <swiper-slide v-for="e in 7" :key="e" class="h-full"><img :src="require(`@/assets/images/slide_0${e}.jpg`)" class="h-full" :alt="e"></swiper-slide>
+            <swiper-slide v-for="e in 7" :key="e" class="h-full"><img :src="require(`@/assets/images/slide_0${e}.jpg`)" class="h-full object-cover" :alt="e"></swiper-slide>
         </swiper>
     </div>
     <!-- //슬라이드 -->
     <div class="w-full h-auto bgimage">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between pt-[130px] px-[2%] xl:px-0" data-aos="fade-up" data-aos-offset="300" data-aos-duration="500">
             <!-- 공지사항 -->
-            <div class="basis-full xl:basis-[49%] relative">
+            <div class="w-full xl:basis-[49%] relative">
                 <h2 class="text-4xl anemonesq mb-[13px]">NOTICE</h2>
-                <div class="p-[26px] rounded-xl bg-[#f5f9fc] spoqa md:h-[222px]">
+                <div class="lg:p-[26px] rounded-xl bg-[#f5f9fc] spoqa md:h-[222px]">
                     <ul>
                         <li class="mb-3 last-of-type:mb-0" v-for="e in ContentData[0].Notice" :key="e">
                             <a href="#" @click.prevent class="flex flex-wrap justify-between">

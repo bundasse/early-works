@@ -31,7 +31,7 @@
     <!-- 내비게이션 -->
     <div class="hidden xl:block sticky top-0 w-full bg-black text-white pt-[12px] z-50">
         <ul class="max-w-7xl mx-auto flex justify-between">
-            <li v-for="(e,i) in navContents.Navi" :key="e" @mouseover="NavSelectIndex = i; SubMenu(i)" @mouseout="NavSelectIndex = null" class="relative px-5 py-3 transition-all hover:bg-[#73c4bf]">
+            <li v-for="(e,i) in navContents.Navi" :key="e" @mouseenter="NavSelectIndex = i; SubMenu(i)" @mouseleave="NavSelectIndex = null; SubMenu(i)" class="relative px-5 py-3 transition-all hover:bg-[#73c4bf]">
                 <a href="#" class="text-lg">{{ e }}</a>
                 <ul class="Spoqa absolute left-0 top-[52px] bg-[#73c4bf] w-[300px] sub_list overflow-hidden transition-all duration-500" style="height: 0px;" :style="NavSelectIndex === i && isSubMenu">
                     <li v-for="el in navContents.SubMenu[i]" :key="el" class="first-of-type:mt-4 h-[40px] ml-6 pl-2 mr-3 py-2 text-[15px] hover:bg-white hover:text-[#73c4bf]">
@@ -42,7 +42,7 @@
         </ul>
     </div>
     <!-- 모바일메뉴 -->
-    <div :class="isOpen? 'fixed': 'hidden'" class="w-full h-full bg-black/50 z-40 xl:hidden">
+    <div :class="isOpen === true? 'fixed': 'hidden'" class="w-full h-full bg-black/50 z-40 xl:hidden">
     </div>
     <div class="block xl:hidden bg-white">
         <div class="flex justify-between w-full px-[30px] h-20 items-center">
@@ -60,9 +60,9 @@
             </ul>
         </div>
     </div>
-    <div :class="isOpen&& '!left-0'" class="w-96 fixed bg-white z-50 box-border Spoqa transition-all duration-500 top-0 -left-96 xl:hidden">
+    <div :class="isOpen === true && '!left-0'" class="w-96 fixed bg-white z-50 box-border Spoqa transition-all duration-500 top-0 -left-96 xl:hidden">
         <div class="w-full flex justify-between items-center border-b-2 px-5 py-9 pb-3">
-            <button @click="isOpen=false" class="relative basis-8 h-8">
+            <button @click="isOpen = false" class="relative basis-8 h-8">
                 <p class="absolute w-8 h-0.5 bg-black top-3 left-0 rotate-45"></p>
                 <p class="absolute w-8 h-0.5 bg-black top-3 left-0 -rotate-45"></p>
             </button>
@@ -109,7 +109,7 @@ export default {
             snsdata: Data[0],
             NavSelectIndex:null,
             subHeight: '0px',
-            isOpen : true
+            isOpen : false
         }
     },
     props:{
