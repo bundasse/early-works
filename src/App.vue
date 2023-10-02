@@ -6,9 +6,25 @@
     </p>
   </div>
   <!-- 헤더 -->
-  <div class="w-full sticky border-b-2 border-gray-200 top-[90px]">
-    <div class="max-w-7xl mx-auto">
-      검색어를 입력해주세요
+  <div class="w-full sticky border-b-2 border-gray-200 top-[90px] py-6">
+    <div class="max-w-6xl mx-auto flex justify-between items-end">
+      <div class="basis-1/4">
+        <input type="text" class="pl-3 h-10 border border-green-900 placeholder:text-gray-500 placeholder:text-sm" placeholder="검색어를 입력해주세요">
+        <button class="bg-green-900 text-white h-10 px-2">검색</button>
+      </div>
+      <img class="w-36" :src="require(`@/assets/icon/logo_pc.svg`)" alt="집반찬연구소 로고">
+      <div class="basis-1/4 flex flex-col items-end gap-3">
+          <ul class="flex text-sm text-gray-500">
+            <li class="mr-6 relative after:absolute after:w-[1px] after:h-3 after:-right-3 after:top-[6px] after:bg-gray-400">로그인</li>
+            <li class="mr-6 relative after:absolute after:w-[1px] after:h-3 after:-right-3 after:top-[6px] after:bg-gray-400">회원가입</li>
+            <li>내정보</li>
+          </ul>
+          <ul class="flex gap-4 text-lg font-semibold">
+            <li>브랜드</li>
+            <li>반찬보기</li>
+            <li>장바구니</li>
+          </ul>
+      </div>
     </div>
   </div>
   <!-- 내비게이션 -->
