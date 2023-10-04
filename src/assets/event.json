@@ -1,0 +1,28 @@
+{
+    "event":[
+        {"title": "한없이 가벼운, 국수",
+        "img": "summer_noodle_thumb_pc",
+        "desc": "단 15분이면 끝! 간단하게 맛보는 초여름 별미 보양식!"},
+        {"title": "여름 새참! 참외와 감자",
+        "img": "Korean_melon_potato_thumb_pc",
+        "desc": "노란 껍질에 스며든 부드러움, 그리고 시원함"},
+        {"title": "식감 : 아삭이, 토마토",
+        "img": "crunch_banchan_thumb_pc",
+        "desc": "초여름에 접어든 5월, 상큼하고 아삭한 여름 반찬으로 건강한 한끼를 채워보세요."},
+        {"title": "5월 신규 회원 혜택 이벤트",
+        "img": "2023_5_new_join_thumb_pc",
+        "desc": "5월의 신규회원을 위한 특별한 혜택! 24시간만 구매 가능한 첫만남 선물을 확인하세요."},
+        {"title": "어버이날 한상차림 선물세트",
+        "img": "parents_day_thumb_pc",
+        "desc": "어버이날 마음을 담은 한상을 부모님께 선물하세요."},
+        {"title": "4월 브랜드위크",
+        "img": "4_brand_week_thumb_pc",
+        "desc": "(종료) 최대 150,000P 추가 적립부터 무료배송 쿠폰, 이 달의 특별관, 스타벅스 기프티콘까지 4월만의 혜택을 놓치지 마세요!"},
+        {"title": "카카오톡 채널 추가 이벤트",
+        "img": "kakaotalk_event_thumb_pc",
+        "desc": "(종료) 집반찬연구소 카카오톡 채널의 친구가 되어주세요!"},
+        {"title": "아이반찬 골라담기",
+        "img": "child_banchan_thumb_pc",
+        "desc": "우리아이 성장대전, 든든 & 간편 & 골고루 반찬 가득!"}        
+    ]
+}

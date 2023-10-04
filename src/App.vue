@@ -6,7 +6,7 @@
     </p>
   </div>
   <!-- 헤더 -->
-  <div class="w-full sticky border-b-2 border-gray-200 top-[90px] py-6">
+  <div class="w-full sticky border-b-2 border-gray-200 top-[90px] py-6 bg-white">
     <div class="max-w-6xl mx-auto flex justify-between items-end">
       <div class="basis-1/4">
         <input type="text" class="pl-3 h-10 border border-green-900 placeholder:text-gray-500 placeholder:text-sm" placeholder="검색어를 입력해주세요">
@@ -36,7 +36,7 @@
         </p>
         <ul class="flex justify-between flex-wrap">
           <li v-for="(el, index) in submenu[i]" :key="index" class="basis-[47%]">
-            <p class="py-2 text-sm text-gray-600 hover:text-black">
+            <p class="py-2 text-sm text-gray-600 hover:text-black transition-all duration-300">
               {{ el }}
             </p>
           </li>
@@ -53,18 +53,22 @@
   <!-- 새로운 반찬 -->
   <!-- 정기배송 -->
   <!-- 집반찬연구소 이야기 -->
-  <section>
-    <h2>집반찬연구소 이야기</h2>
-    <article>
-      <ul>
-        <li>
-          <img src="" alt="">
-          <p></p>
-          <span></span>
-        </li>
-      </ul>
-    </article>
-    <p>더보기</p>
+  <section class="w-full bg-[#f7f7f7]">
+    <div class="max-w-6xl mx-auto py-[30px]">
+      <h2 class="text-4xl font-bold mb-10">집반찬연구소 이야기</h2>
+      <article>
+        <ul class="flex flex-wrap justify-between gap-y-10">
+          <li v-for="(e, i) in event" :key="i" :class="i<3 ? 'basis-[32%]':'basis-[18.5%]'" class="shadow-md">
+            <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
+            <div class="bg-white p-5">
+              <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
+              <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
+            </div>
+          </li>
+        </ul>
+      </article>
+      <p>더보기</p>
+    </div>
   </section>
   <!-- 고객만족후기 -->
   <section>
@@ -148,7 +152,7 @@
 </template>
 
 <script>
-
+import eventdata from "@/assets/event.json"
 export default {
   name: 'App',
   data() {
@@ -157,7 +161,8 @@ export default {
       mainmenu:[{name:'모든반찬',link:''},{name:'간편검색',link:''},{name:'인기검색',link:''}],
       submenu:[['추석 차례상', '2023 추석', '아이 반찬 6종, 등장!', '특선! 비빔밥 재료', '정기배송', '무침', '볶음', '조림', '어린이 반찬', '요리놀이터', '국/찌개/탕', '소분야채', '메인요리', '묶음반찬', '전/생선', '협업상품', '김치/절임/젓갈', '곡류/양념', '대용량', '예치금'],
       ['#신제품', '#인기', '#냉동', '#맵지않음', '#따듯하게먹는반찬', '#조리필요', '#제철반찬', '#차갑게먹는반찬'],
-      ['#할인반찬', '#어린이반찬', '#부모님반찬', '#소분야채', '#제철반찬', '#반조리', '#쿠킹박스']]
+      ['#할인반찬', '#어린이반찬', '#부모님반찬', '#소분야채', '#제철반찬', '#반조리', '#쿠킹박스']],
+      event:eventdata.event
     }
   },
   components: {
