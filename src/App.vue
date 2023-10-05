@@ -1,12 +1,12 @@
 <template>
   <!-- 상단배너 -->
-  <div class="w-full h-[90px] bg-[#284833] sticky top-0">
+  <div class="w-full h-[90px] bg-[#284833] sticky top-0 z-10">
     <p class="max-w-7xl mx-auto relative text-center text-white text-2xl leading-[90px]">지금 가입하고 [<span class="font-bold">24시간 특별 혜택</span>] 받으세요!
       <button class="absolute top-0 right-24"><img :src="require(`@/assets/icon/topbanner_close.gif`)" alt="닫기"></button>
     </p>
   </div>
   <!-- 헤더 -->
-  <div class="w-full sticky border-b-2 border-gray-200 top-[90px] py-6 bg-white">
+  <div class="w-full sticky border-b-2 border-gray-200 top-[90px] py-6 bg-white z-10">
     <div class="max-w-6xl mx-auto flex justify-between items-end">
       <div class="basis-1/4">
         <input type="text" class="pl-3 h-10 border border-green-900 placeholder:text-gray-500 placeholder:text-sm" placeholder="검색어를 입력해주세요">
@@ -48,10 +48,100 @@
   <!-- //헤더 -->
   <!-- 비주얼 -->
   <!-- //비주얼 -->
+  <div class="max-w-6xl mx-auto">
+    <img :src="require(`@/assets/images/ban_reason 2.jpg`)" alt="">
+  </div>
   <!-- 어린이반찬 -->
+  <section class="max-w-6xl mx-auto py-[30px]">
+    <h2 class="text-4xl font-bold mb-10">어린이 반찬</h2>
+    <article>
+      <swiper
+        :slides-per-view="4"
+        :space-between="50"
+        :modules="modules"
+        :navigation="true"
+      >
+        <swiper-slide  v-for="(e, i) in event" :key="i">
+              <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
+              <div class="bg-white p-5">
+                <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
+                <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
+              </div>
+        </swiper-slide>
+      </swiper>
+    </article>
+    <p>더보기</p>
+  </section>
+  <!-- //어린이반찬 -->
+  <div class="max-w-6xl mx-auto">
+    <ul class="flex justify-between">
+      <li v-for="e in 3" :key="e" :class="e===3 ? 'basis-1/2' : 'basis-[24%]'">
+        <img :src="require(`@/assets/images/banner_`+e+`_pc_.png`)" alt="">
+      </li>
+    </ul>
+  </div>
   <!-- 주간추천반찬 -->
+  <section class="max-w-6xl mx-auto py-[30px]">
+    <h2 class="text-4xl font-bold mb-10">주간 추천 반찬</h2>
+    <article>
+      <ul class="flex justify-between">
+        <li v-for="(e, i) in event" :key="i" class="basis-[24%]">
+          <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
+          <div class="bg-white p-5">
+            <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
+            <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
+          </div>
+        </li>
+      </ul>
+    </article>
+    <p>더보기</p>
+  </section>
+  <!-- //주간추천반찬 -->
+  <div class="max-w-6xl mx-auto">
+    <img :src="require(`@/assets/images/250banchan_linebanner_pc.png`)" alt="">
+  </div>
   <!-- 새로운 반찬 -->
+  <section class="max-w-6xl mx-auto py-[30px]">
+    <h2 class="text-4xl font-bold mb-10">새로운 반찬</h2>
+    <article>
+      <swiper
+        :slides-per-view="4"
+        :space-between="50"
+        :modules="modules"
+        :navigation="true"
+      >
+        <swiper-slide  v-for="(e, i) in event" :key="i">
+              <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
+              <div class="bg-white p-5">
+                <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
+                <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
+              </div>
+        </swiper-slide>
+      </swiper>
+    </article>
+    <p>더보기</p>
+  </section>
+  <!-- //새로운 반찬 -->
+  <div class="max-w-6xl mx-auto">
+    <img :src="require(`@/assets/images/summer_noodle_linebanner_pc.jpg`)" alt="">
+  </div>
   <!-- 정기배송 -->
+  <section class="max-w-6xl mx-auto py-[30px]">
+    <h2 class="text-4xl font-bold mb-10">정기배송</h2>
+    <article>
+      <ul class="flex flex-wrap justify-between gap-y-10">
+        <li v-for="(e, i) in event" :key="i" class="basis-[32%]">
+          <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
+          <div class="bg-white p-5">
+            <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
+            <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
+          </div>
+        </li>
+      </ul>
+    </article>
+    <p>더보기</p>
+  </section>
+  <!-- //정기배송 -->
   <!-- 집반찬연구소 이야기 -->
   <section class="w-full bg-[#f7f7f7]">
     <div class="max-w-6xl mx-auto py-[30px]">
@@ -153,6 +243,10 @@
 
 <script>
 import eventdata from "@/assets/event.json"
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
 export default {
   name: 'App',
   data() {
@@ -166,6 +260,13 @@ export default {
     }
   },
   components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+      return {
+        modules: [Navigation],
+      };
   }
 }
 </script>
