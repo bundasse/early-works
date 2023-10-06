@@ -47,12 +47,22 @@
   <!-- //내비게이션 -->
   <!-- //헤더 -->
   <!-- 비주얼 -->
+  <swiper
+    :slides-per-view="1"
+    :space-between="0"
+    :modules="modules"
+    :navigation="true"
+  >
+    <swiper-slide  v-for="(e, i) in event" :key="i">
+          <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
+    </swiper-slide>
+  </swiper>
   <!-- //비주얼 -->
   <div class="max-w-6xl mx-auto">
     <img :src="require(`@/assets/images/ban_reason 2.jpg`)" alt="">
   </div>
   <!-- 어린이반찬 -->
-  <section class="max-w-6xl mx-auto py-[30px]">
+  <section class="max-w-6xl mx-auto py-[30px] mb-10">
     <h2 class="text-4xl font-bold mb-10">어린이 반찬</h2>
     <article>
       <swiper
@@ -61,11 +71,15 @@
         :modules="modules"
         :navigation="true"
       >
-        <swiper-slide  v-for="(e, i) in event" :key="i">
+        <swiper-slide  v-for="(e, i) in product.kid" :key="i">
               <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
-              <div class="bg-white p-5">
-                <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
-                <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
+              <div class="bg-white py-5">
+                <ul class="flex gap-2">
+                  <li v-for="(el, index) in e.tag" :key="index" class="text-xs" :class="el === '인기'? 'text-red-600': 'text-gray-600'">#{{ el }}</li>
+                </ul>
+                <p class="font-bold my-1">{{ e.name }}</p>
+                <p class="text-xs text-gray-600 mb-2">{{ e.desc }}</p>
+                <p>{{e.price}}</p>
               </div>
         </swiper-slide>
       </swiper>
@@ -94,7 +108,6 @@
         </li>
       </ul>
     </article>
-    <p>더보기</p>
   </section>
   <!-- //주간추천반찬 -->
   <div class="max-w-6xl mx-auto">
@@ -243,6 +256,7 @@
 
 <script>
 import eventdata from "@/assets/event.json"
+import product from "@/assets/product.json"
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -256,7 +270,8 @@ export default {
       submenu:[['추석 차례상', '2023 추석', '아이 반찬 6종, 등장!', '특선! 비빔밥 재료', '정기배송', '무침', '볶음', '조림', '어린이 반찬', '요리놀이터', '국/찌개/탕', '소분야채', '메인요리', '묶음반찬', '전/생선', '협업상품', '김치/절임/젓갈', '곡류/양념', '대용량', '예치금'],
       ['#신제품', '#인기', '#냉동', '#맵지않음', '#따듯하게먹는반찬', '#조리필요', '#제철반찬', '#차갑게먹는반찬'],
       ['#할인반찬', '#어린이반찬', '#부모님반찬', '#소분야채', '#제철반찬', '#반조리', '#쿠킹박스']],
-      event:eventdata.event
+      event:eventdata.event,
+      product:product
     }
   },
   components: {
