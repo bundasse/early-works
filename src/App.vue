@@ -1,12 +1,12 @@
 <template>
   <!-- 상단배너 -->
-  <div class="w-full h-[90px] bg-[#284833] sticky top-0 z-10">
+  <div :class="bannerOpen === true? 'h-[90px]': 'h-0'" class="w-full bg-[#284833] sticky top-0 z-10">
     <p class="max-w-7xl mx-auto relative text-center text-white text-2xl leading-[90px]">지금 가입하고 [<span class="font-bold">24시간 특별 혜택</span>] 받으세요!
-      <button class="absolute top-0 right-24"><img :src="require(`@/assets/icon/topbanner_close.gif`)" alt="닫기"></button>
+      <button class="absolute top-0 right-24" @click="bannerOpen=false"><img :src="require(`@/assets/icon/topbanner_close.gif`)" alt="닫기"></button>
     </p>
   </div>
   <!-- 헤더 -->
-  <div class="w-full sticky border-b-2 border-gray-200 top-[90px] py-6 bg-white z-10">
+  <div :class="bannerOpen === true?  'top-[90px]':'top-0'" class="w-full sticky border-b-2 border-gray-200 py-6 bg-white z-10">
     <div class="max-w-6xl mx-auto flex justify-between items-end">
       <div class="basis-1/4">
         <input type="text" class="pl-3 h-10 border border-green-900 placeholder:text-gray-500 placeholder:text-sm" placeholder="검색어를 입력해주세요">
@@ -79,7 +79,8 @@
                 </ul>
                 <p class="font-bold my-1">{{ e.name }}</p>
                 <p class="text-xs text-gray-600 mb-2">{{ e.desc }}</p>
-                <p>{{e.price}}</p>
+                <p class="text-red-600 font-bold text-lg">{{  salePrice(e.sale, e.price) }}<span clas="text-sm">원</span></p>
+                <span class="text-gray-600 strike" :v-html="e.sale !== 0 && e.sale"></span>
               </div>
         </swiper-slide>
       </swiper>
@@ -98,6 +99,9 @@
   <section class="max-w-6xl mx-auto py-[30px]">
     <h2 class="text-4xl font-bold mb-10">주간 추천 반찬</h2>
     <article>
+      <ul class="flex gap-3 mb-5">
+        <li v-for="(e, i) in category" :key="i" @click="selectedCategory = e.link" class="text-sm px-4 py-2 rounded-md cursor-pointer" :class="selectedCategory === e.link ? ' bg-green-900 text-white':'bg-gray-200 text-gray-600'">{{ e.name }}</li>
+      </ul>
       <ul class="flex justify-between">
         <li v-for="(e, i) in event" :key="i" class="basis-[24%]">
           <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
@@ -142,17 +146,24 @@
   <section class="max-w-6xl mx-auto py-[30px]">
     <h2 class="text-4xl font-bold mb-10">정기배송</h2>
     <article>
-      <ul class="flex flex-wrap justify-between gap-y-10">
-        <li v-for="(e, i) in event" :key="i" class="basis-[32%]">
-          <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
-          <div class="bg-white p-5">
-            <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
-            <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
+      <ul class="flex flex-wrap justify-between gap-y-5">
+        <li v-for="(e, i) in product.subscribe" :key="i" class="basis-[32%]">
+          <div class="relative">
+            <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
+            <p class="absolute w-[50px] h-[50px] bg-red-600 text-white top-5 left-5 z-5 py-3 text-center font-bold">{{ e.sale }}%</p>
           </div>
+              <div class="bg-white py-5">
+                <ul class="flex gap-2">
+                  <li v-for="(el, index) in e.tag" :key="index" class="text-xs" :class="el === '인기'? 'text-red-600': 'text-gray-600'">#{{ el }}</li>
+                </ul>
+                <p class="font-bold my-1">{{ e.name }}</p>
+                <p class="text-xs text-gray-600 mb-2">{{ e.desc }}</p>
+                <p class="text-red-600 font-bold text-lg mb-0"><span :class="e.sale === 0 ? 'hidden':''">{{ e.sale }}%</span> {{ salePrice(e.sale, e.price) }}<span clas="text-sm">원</span></p>
+                <span :class="e.sale === 0 ? 'hidden':''" class="text-gray-400 text-xs line-through">{{e.price}}원</span>
+              </div>
         </li>
       </ul>
     </article>
-    <p>더보기</p>
   </section>
   <!-- //정기배송 -->
   <!-- 집반찬연구소 이야기 -->
@@ -265,11 +276,14 @@ export default {
   name: 'App',
   data() {
     return {
+      bannerOpen: true,
       addressOpen: false,
       mainmenu:[{name:'모든반찬',link:''},{name:'간편검색',link:''},{name:'인기검색',link:''}],
       submenu:[['추석 차례상', '2023 추석', '아이 반찬 6종, 등장!', '특선! 비빔밥 재료', '정기배송', '무침', '볶음', '조림', '어린이 반찬', '요리놀이터', '국/찌개/탕', '소분야채', '메인요리', '묶음반찬', '전/생선', '협업상품', '김치/절임/젓갈', '곡류/양념', '대용량', '예치금'],
       ['#신제품', '#인기', '#냉동', '#맵지않음', '#따듯하게먹는반찬', '#조리필요', '#제철반찬', '#차갑게먹는반찬'],
       ['#할인반찬', '#어린이반찬', '#부모님반찬', '#소분야채', '#제철반찬', '#반조리', '#쿠킹박스']],
+      category:[{name:'어린이 반찬',link:'kid'},{name:'국/찌개/탕',link:'tang'},{name:'요리놀이터',link:'noliteo'},{name:'무침',link:'muchim'},{name:'메인요리',link:'main'},{name:'쿠킹박스',link:'cookingbox'},{name:'볶음',link:'bokum'},{name:'조림',link:'jorim'},{name:'소분',link:'sobun'},{name:'김치/절임/젓갈',link:'jeolim'}],
+      selectedCategory:'kid',
       event:eventdata.event,
       product:product
     }
@@ -277,6 +291,12 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  methods:{
+    salePrice(sale, price){
+      const cal =  Math.round((100-Number(sale))*Number(price)/10000)*100;
+      return cal
+    }
   },
   setup() {
       return {
