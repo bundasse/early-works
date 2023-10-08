@@ -53,37 +53,19 @@
     :modules="modules"
     :navigation="true"
   >
-    <swiper-slide  v-for="(e, i) in event" :key="i">
-          <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
+    <swiper-slide  v-for="(e, i) in visualContents" :key="i">
+          <img :src="require(`@/assets/images/`+e+`.jpg`)" alt="" class=" h-96 object-cover">
     </swiper-slide>
   </swiper>
   <!-- //비주얼 -->
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-6xl mx-auto mt-10">
     <img :src="require(`@/assets/images/ban_reason 2.jpg`)" alt="">
   </div>
   <!-- 어린이반찬 -->
   <section class="max-w-6xl mx-auto py-[30px] mb-10">
     <h2 class="text-4xl font-bold mb-10">어린이 반찬</h2>
     <article>
-      <swiper
-        :slides-per-view="4"
-        :space-between="50"
-        :modules="modules"
-        :navigation="true"
-      >
-        <swiper-slide  v-for="(e, i) in product.kid" :key="i">
-              <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
-              <div class="bg-white py-5">
-                <ul class="flex gap-2">
-                  <li v-for="(el, index) in e.tag" :key="index" class="text-xs" :class="el === '인기'? 'text-red-600': 'text-gray-600'">#{{ el }}</li>
-                </ul>
-                <p class="font-bold my-1">{{ e.name }}</p>
-                <p class="text-xs text-gray-600 mb-2">{{ e.desc }}</p>
-                <p class="text-red-600 font-bold text-lg">{{  salePrice(e.sale, e.price) }}<span clas="text-sm">원</span></p>
-                <span class="text-gray-600 strike" :v-html="e.sale !== 0 && e.sale"></span>
-              </div>
-        </swiper-slide>
-      </swiper>
+      <SlideComp :slideData="product.kid"/>
     </article>
     <p>더보기</p>
   </section>
@@ -121,20 +103,7 @@
   <section class="max-w-6xl mx-auto py-[30px]">
     <h2 class="text-4xl font-bold mb-10">새로운 반찬</h2>
     <article>
-      <swiper
-        :slides-per-view="4"
-        :space-between="50"
-        :modules="modules"
-        :navigation="true"
-      >
-        <swiper-slide  v-for="(e, i) in event" :key="i">
-              <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
-              <div class="bg-white p-5">
-                <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
-                <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
-              </div>
-        </swiper-slide>
-      </swiper>
+      <SlideComp :slideData="product.new"/>
     </article>
     <p>더보기</p>
   </section>
@@ -150,7 +119,7 @@
         <li v-for="(e, i) in product.subscribe" :key="i" class="basis-[32%]">
           <div class="relative">
             <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
-            <p class="absolute w-[50px] h-[50px] bg-red-600 text-white top-5 left-5 z-5 py-3 text-center font-bold">{{ e.sale }}%</p>
+            <p class="absolute w-[50px] h-[50px] bg-red-600 text-white top-4 left-4 z-5 py-3 text-center font-bold">{{ e.sale }}%</p>
           </div>
               <div class="bg-white py-5">
                 <ul class="flex gap-2">
@@ -172,9 +141,9 @@
       <h2 class="text-4xl font-bold mb-10">집반찬연구소 이야기</h2>
       <article>
         <ul class="flex flex-wrap justify-between gap-y-10">
-          <li v-for="(e, i) in event" :key="i" :class="i<3 ? 'basis-[32%]':'basis-[18.5%]'" class="shadow-md">
+          <li v-for="(e, i) in event" :key="i" :class="i<3 ? 'basis-[32%]':'basis-[18.5%]'" class="shadow-md bg-white">
             <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
-            <div class="bg-white p-5">
+            <div class="p-5">
               <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
               <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
             </div>
@@ -268,6 +237,7 @@
 <script>
 import eventdata from "@/assets/event.json"
 import product from "@/assets/product.json"
+import SlideComp from "@/components/SlideComp.vue"
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -278,6 +248,7 @@ export default {
     return {
       bannerOpen: true,
       addressOpen: false,
+      visualContents: ['banner_03fa687a15b3364406cb79685a6d9bb0','banner_4b385f00fa872a30ca4f2187c7eca720','banner_0074fafea0659b28df43fc3b63a92093','banner_3022779eb81d97638fd568799b080f8d','banner_35211058de968b521eba695108c4155c'],
       mainmenu:[{name:'모든반찬',link:''},{name:'간편검색',link:''},{name:'인기검색',link:''}],
       submenu:[['추석 차례상', '2023 추석', '아이 반찬 6종, 등장!', '특선! 비빔밥 재료', '정기배송', '무침', '볶음', '조림', '어린이 반찬', '요리놀이터', '국/찌개/탕', '소분야채', '메인요리', '묶음반찬', '전/생선', '협업상품', '김치/절임/젓갈', '곡류/양념', '대용량', '예치금'],
       ['#신제품', '#인기', '#냉동', '#맵지않음', '#따듯하게먹는반찬', '#조리필요', '#제철반찬', '#차갑게먹는반찬'],
@@ -291,6 +262,7 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+    SlideComp
   },
   methods:{
     salePrice(sale, price){
