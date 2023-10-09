@@ -154,22 +154,10 @@
     </div>
   </section>
   <!-- 고객만족후기 -->
-  <section>
-    <h2>고객만족후기</h2>
+  <section class="max-w-6xl mx-auto py-[30px]">
+    <h2 class="text-4xl font-bold mb-10">고객만족후기</h2>
     <article>
-      <ul>
-        <li>
-          <img src="" alt="">
-          <div>
-            <p></p>
-            <p></p>
-            <p>
-              <span>이름 평점</span>
-              <span>날짜</span>
-            </p>
-          </div>
-        </li>
-      </ul>
+      <ReviewComp />
     </article>
   </section>
   <!-- 푸터 -->
@@ -238,6 +226,7 @@
 import eventdata from "@/assets/event.json"
 import product from "@/assets/product.json"
 import SlideComp from "@/components/SlideComp.vue"
+import ReviewComp from "@/components/ReviewComp.vue"
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -262,7 +251,8 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    SlideComp
+    SlideComp,
+    ReviewComp
   },
   methods:{
     salePrice(sale, price){
