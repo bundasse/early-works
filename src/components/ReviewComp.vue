@@ -4,7 +4,7 @@
             <div class="flex">
                 <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="" class="block">
                 <div class="basis-full flex flex-col gap-2 justify-center pl-5">
-                    <p class="text-sm">{{ e.desc }}</p>
+                    <p class="text-xs">{{ e.desc }}</p>
                     <p class="text-xs text-gray-600">{{ e.product }}</p>
                     <div class="text-xs text-gray-600 flex justify-between">
                         <p>{{ nameFilter(e.name) }} <span v-for="el in e.star" :key="el" class="text-black">★</span><span v-for="el in (5-e.star)" :key="el" class="text-black">☆</span></p>

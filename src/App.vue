@@ -119,17 +119,18 @@
         <li v-for="(e, i) in product.subscribe" :key="i" class="basis-[32%]">
           <div class="relative">
             <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
-            <p class="absolute w-[50px] h-[50px] bg-red-600 text-white top-4 left-4 z-5 py-3 text-center font-bold">{{ e.sale }}%</p>
+            <p v-if="e.sale !== 0" class="absolute w-[50px] h-[50px] bg-red-600 text-white top-4 left-4 z-5 py-3 text-center font-bold">{{ e.sale }}%</p>
+            <p class="absolute w-[50px] h-[50px] bg-black opacity-50 bottom-4 right-4 z-5 p-[6px]"><img :src="require(`@/assets/icon/cart-white.svg`)" class="w-10" alt=""></p>
           </div>
-              <div class="bg-white py-5">
-                <ul class="flex gap-2">
-                  <li v-for="(el, index) in e.tag" :key="index" class="text-xs" :class="el === '인기'? 'text-red-600': 'text-gray-600'">#{{ el }}</li>
-                </ul>
-                <p class="font-bold my-1">{{ e.name }}</p>
-                <p class="text-xs text-gray-600 mb-2">{{ e.desc }}</p>
-                <p class="text-red-600 font-bold text-lg mb-0"><span :class="e.sale === 0 ? 'hidden':''">{{ e.sale }}%</span> {{ salePrice(e.sale, e.price) }}<span clas="text-sm">원</span></p>
-                <span :class="e.sale === 0 ? 'hidden':''" class="text-gray-400 text-xs line-through">{{e.price}}원</span>
-              </div>
+          <div class="bg-white py-5">
+            <ul class="flex gap-2">
+              <li v-for="(el, index) in e.tag" :key="index" class="text-xs" :class="el === '인기'? 'text-red-600': 'text-gray-600'">#{{ el }}</li>
+            </ul>
+            <p class="font-bold my-1">{{ e.name }}</p>
+            <p class="text-xs text-gray-600 mb-2">{{ e.desc }}</p>
+            <p class="text-red-600 font-bold text-lg pb-0 mb-0"><span :class="e.sale === 0 ? 'hidden':''">{{ e.sale }}%</span> {{ salePrice(e.sale, e.price) }}<span clas="text-sm">원</span></p>
+            <span v-if="e.sale !== 0" class="text-gray-400 text-xs line-through">{{e.price}}원</span>
+          </div>
         </li>
       </ul>
     </article>
@@ -172,9 +173,9 @@
           <p class="basis-1/2 text-xs text-gray-600"><a href="#" @click.prevent>1:1문의</a></p>
         </div>
         <ul class="flex gap-3">
-          <li>카카오톡</li>
-          <li>인스타</li>
-          <li>페북</li>
+          <li><img :src="require(`@/assets/icon/kakao.svg`)" alt=""></li>
+          <li><img :src="require(`@/assets/icon/insta.svg`)" alt=""></li>
+          <li><img :src="require(`@/assets/icon/facebook.svg`)" alt=""></li>
         </ul>
       </div>
       <div class="basis-[33%]">
