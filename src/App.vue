@@ -9,21 +9,21 @@
     <!-- 헤더 -->
     <div :class="bannerOpen === true?  'top-[90px]':'top-0'" class="w-full sticky border-b-2 border-gray-200 py-6 bg-white z-10">
       <div class="max-w-6xl mx-auto flex justify-between items-end">
-        <div class="basis-1/4">
+        <div class="basis-1/3">
           <input type="text" class="pl-3 h-10 border border-green-900 placeholder:text-gray-500 placeholder:text-sm" placeholder="검색어를 입력해주세요">
           <button class="bg-green-900 text-white h-10 px-2">검색</button>
         </div>
-        <img class="w-36" :src="require(`@/assets/icon/logo_pc.svg`)" alt="집반찬연구소 로고">
-        <div class="basis-1/4 flex flex-col items-end gap-3">
+        <img class="w-36 cursor-pointer" :src="require(`@/assets/icon/logo_pc.svg`)" alt="집반찬연구소 로고">
+        <div class="basis-1/3 flex flex-col items-end gap-3">
             <ul class="flex text-sm text-gray-500">
-              <li class="mr-6 relative after:absolute after:w-[1px] after:h-3 after:-right-3 after:top-[6px] after:bg-gray-400">로그인</li>
-              <li class="mr-6 relative after:absolute after:w-[1px] after:h-3 after:-right-3 after:top-[6px] after:bg-gray-400">회원가입</li>
-              <li>내정보</li>
+              <li class="cursor-pointer hover:text-black mr-6 relative after:absolute after:w-[1px] after:h-3 after:-right-3 after:top-[6px] after:bg-gray-400">로그인</li>
+              <li class="cursor-pointer hover:text-black mr-6 relative after:absolute after:w-[1px] after:h-3 after:-right-3 after:top-[6px] after:bg-gray-400">회원가입</li>
+              <li class="cursor-pointer hover:text-black ">내정보</li>
             </ul>
-            <ul class="flex gap-4 text-lg font-semibold">
-              <li>브랜드</li>
-              <li>반찬보기</li>
-              <li>장바구니</li>
+            <ul class="w-full flex gap-4 text-lg justify-end">
+              <li class="cursor-pointer"><img :src="require(`@/assets/icon/icon-story.svg`)" class="inline-block" alt=""> 브랜드</li>
+              <li class="cursor-pointer"><img :src="require(`@/assets/icon/icon-banchan.svg`)" class="inline-block" alt=""> 반찬보기</li>
+              <li class="cursor-pointer"><img :src="require(`@/assets/icon/cart-black.svg`)" class="inline-block" alt=""> 장바구니</li>
             </ul>
         </div>
       </div>
@@ -117,7 +117,7 @@
       <h2 class="text-4xl font-bold mb-10">정기배송</h2>
       <article>
         <ul class="flex flex-wrap justify-between gap-y-5">
-          <li v-for="(e, i) in product.subscribe" :key="i" class="basis-[32%]">
+          <li v-for="(e, i) in product.subscribe" :key="i" class="basis-[32%] cursor-pointer">
             <div class="relative">
               <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
               <p v-if="e.sale !== 0" class="absolute w-[50px] h-[50px] bg-red-600 text-white top-4 left-4 z-5 py-3 text-center font-bold">{{ e.sale }}%</p>
