@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="relative">
     <div v-if="bannerOpen === true" class="w-full h-[90px] bg-[#284833] sticky top-0 z-10">
     <!-- 상단배너 -->
       <p class="max-w-7xl mx-auto relative text-center text-white text-2xl leading-[90px]">지금 가입하고 [<span class="font-bold">24시간 특별 혜택</span>] 받으세요!
@@ -164,6 +164,9 @@
     </section>
     <!-- 푸터 -->
     <FooterComp />
+    <div class="fixed right-8 bottom-8 w-12 h-12">
+      <img :src="require(`@/assets/icon/top_arrow.svg`)" alt="">
+    </div>
   </div>
 </template>
 
@@ -182,7 +185,6 @@ export default {
   data() {
     return {
       bannerOpen: true,
-      addressOpen: false,
       visualContents: ['banner_03fa687a15b3364406cb79685a6d9bb0','banner_4b385f00fa872a30ca4f2187c7eca720','banner_0074fafea0659b28df43fc3b63a92093','banner_3022779eb81d97638fd568799b080f8d','banner_35211058de968b521eba695108c4155c'],
       mainmenu:[{name:'모든반찬',link:''},{name:'간편검색',link:''},{name:'인기검색',link:''}],
       submenu:[['추석 차례상', '2023 추석', '아이 반찬 6종, 등장!', '특선! 비빔밥 재료', '정기배송', '무침', '볶음', '조림', '어린이 반찬', '요리놀이터', '국/찌개/탕', '소분야채', '메인요리', '묶음반찬', '전/생선', '협업상품', '김치/절임/젓갈', '곡류/양념', '대용량', '예치금'],
