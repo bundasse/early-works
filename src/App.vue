@@ -86,7 +86,7 @@
           <li v-for="(e, i) in category" :key="i" @click="selectedCategory = e.link" class="text-sm px-4 py-2 rounded-md cursor-pointer" :class="selectedCategory === e.link ? ' bg-green-900 text-white':'bg-gray-200 text-gray-600'">{{ e.name }}</li>
         </ul>
         <ul class="flex justify-between">
-          <li v-for="(e, i) in event" :key="i" class="basis-[24%]">
+          <li v-for="(e, i) in cateItem" :key="i" class="basis-[24%]">
             <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
             <div class="bg-white p-5">
               <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
@@ -193,7 +193,8 @@ export default {
       category:[{name:'어린이 반찬',link:'kid'},{name:'국/찌개/탕',link:'tang'},{name:'요리놀이터',link:'noliteo'},{name:'무침',link:'muchim'},{name:'메인요리',link:'main'},{name:'쿠킹박스',link:'cookingbox'},{name:'볶음',link:'bokum'},{name:'조림',link:'jorim'},{name:'소분',link:'sobun'},{name:'김치/절임/젓갈',link:'jeolim'}],
       selectedCategory:'kid',
       event:eventdata.event,
-      product:product
+      product:product,
+      weeklyItem:product.weekly
     }
   },
   components: {
@@ -207,6 +208,13 @@ export default {
     salePrice(sale, price){
       const cal =  Math.round((100-Number(sale))*Number(price)/10000)*100;
       return cal
+    }
+  },
+  computed:{
+    cateItem(){
+      return this.weeklyItem.filter((data)=>{
+          return data === this.selectedCategory
+      })
     }
   },
   setup() {
