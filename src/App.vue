@@ -2,16 +2,16 @@
   <div class="relative">
     <div v-if="bannerOpen === true" class="w-full h-[90px] bg-[#284833] sticky top-0 z-10">
     <!-- 상단배너 -->
-      <p class="max-w-7xl mx-auto relative text-center text-white text-2xl leading-[90px]">지금 가입하고 [<span class="font-bold">24시간 특별 혜택</span>] 받으세요!
+      <p class="max-w-7xl mx-auto relative text-center text-white text-2xl leading-[90px] notoserif">지금 가입하고 [<span class="font-bold notoserif">24시간 특별 혜택</span>] 받으세요!
         <button class="absolute top-0 right-24" @click="bannerOpen=false"><img :src="require(`@/assets/icon/topbanner_close.gif`)" alt="닫기"></button>
       </p>
     </div>
     <!-- 헤더 -->
     <div :class="bannerOpen === true?  'top-[90px]':'top-0'" class="w-full sticky border-b-2 border-gray-200 py-6 bg-white z-10">
       <div class="max-w-6xl mx-auto flex justify-between items-end">
-        <div class="basis-1/3">
+        <div class="basis-1/3 flex">
           <input type="text" class="pl-3 h-10 border border-green-900 placeholder:text-gray-500 placeholder:text-sm" placeholder="검색어를 입력해주세요">
-          <button class="bg-green-900 text-white h-10 px-2">검색</button>
+          <button class="bg-green-900 text-white w-10 h-10 p-2"><img :src="require(`@/assets/icon/search_w.svg`)" alt="검색"></button>
         </div>
         <img class="w-36 cursor-pointer" :src="require(`@/assets/icon/logo_pc.svg`)" alt="집반찬연구소 로고">
         <div class="basis-1/3 flex flex-col items-end gap-3">
@@ -36,8 +36,8 @@
             {{ e.name }}
           </p>
           <ul class="flex justify-between flex-wrap">
-            <li v-for="(el, index) in submenu[i]" :key="index" class="basis-[47%]">
-              <p class="py-2 text-sm text-gray-600 hover:text-black transition-all duration-300">
+            <li v-for="(el, index) in submenu[i]" :key="index" class="basis-[47%] cursor-pointer">
+              <p class="py-2 text-gray-600 hover:text-black transition-all duration-300">
                 {{ el }}
               </p>
             </li>
@@ -63,12 +63,12 @@
       <img :src="require(`@/assets/images/ban_reason 2.jpg`)" alt="">
     </div>
     <!-- 어린이반찬 -->
-    <section class="max-w-6xl mx-auto py-[30px] mb-10">
+    <section class="max-w-6xl mx-auto py-20 mb-10 relative">
       <h2 class="text-4xl font-bold mb-10">어린이 반찬</h2>
       <article>
         <SlideComp :slideData="product.kid"/>
       </article>
-      <p>더보기</p>
+      <p class="absolute top-24 right-0 cursor-pointer text-gray-600 text-sm flex items-center">더보기<img :src="require(`@/assets/icon/right.svg`)" class="w-6 h-6" alt="더보기"></p>
     </section>
     <!-- //어린이반찬 -->
     <div class="max-w-6xl mx-auto">
@@ -79,7 +79,7 @@
       </ul>
     </div>
     <!-- 주간추천반찬 -->
-    <section class="max-w-6xl mx-auto py-[30px]">
+    <section class="max-w-6xl mx-auto py-20">
       <h2 class="text-4xl font-bold mb-10">주간 추천 반찬</h2>
       <article>
         <ul class="flex gap-3 mb-5">
@@ -112,19 +112,19 @@
       <img :src="require(`@/assets/images/250banchan_linebanner_pc.png`)" alt="">
     </div>
     <!-- 새로운 반찬 -->
-    <section class="max-w-6xl mx-auto py-[30px]">
+    <section class="max-w-6xl mx-auto py-20 relative">
       <h2 class="text-4xl font-bold mb-10">새로운 반찬</h2>
       <article>
         <SlideComp :slideData="product.new"/>
       </article>
-      <p>더보기</p>
+      <p class="absolute top-24 right-0 cursor-pointer text-gray-600 text-sm flex items-center">더보기<img :src="require(`@/assets/icon/right.svg`)" class="w-6 h-6" alt="더보기"></p>
     </section>
     <!-- //새로운 반찬 -->
     <div class="max-w-6xl mx-auto">
       <img :src="require(`@/assets/images/summer_noodle_linebanner_pc.jpg`)" alt="">
     </div>
     <!-- 정기배송 -->
-    <section class="max-w-6xl mx-auto py-[30px]">
+    <section class="max-w-6xl mx-auto py-20">
       <h2 class="text-4xl font-bold mb-10">정기배송</h2>
       <article>
         <ul class="flex flex-wrap justify-between gap-y-5">
@@ -150,24 +150,24 @@
     <!-- //정기배송 -->
     <!-- 집반찬연구소 이야기 -->
     <section class="w-full bg-[#f7f7f7]">
-      <div class="max-w-6xl mx-auto py-[30px]">
+      <div class="max-w-6xl mx-auto py-20 relative">
         <h2 class="text-4xl font-bold mb-10">집반찬연구소 이야기</h2>
         <article>
           <ul class="flex flex-wrap justify-between gap-y-10">
             <li v-for="(e, i) in event" :key="i" :class="i<3 ? 'basis-[32%]':'basis-[18.5%]'" class="shadow-md bg-white">
               <img :src="require(`@/assets/images/`+e.img+`.jpg`)" alt="">
               <div class="p-5">
-                <p class="text-xl font-bold line-clamp-1 mb-5">{{ e.title }}</p>
+                <p class="text-xl font-bold line-clamp-1 mb-5 notoserif">{{ e.title }}</p>
                 <span class="text-xs text-gray-600 line-clamp-3">{{ e.desc }}</span>
               </div>
             </li>
           </ul>
         </article>
-        <p>더보기</p>
+        <p class="absolute top-24 right-0 cursor-pointer text-gray-600 text-sm flex items-center">더보기<img :src="require(`@/assets/icon/right.svg`)" class="w-6 h-6" alt="더보기"></p>
       </div>
     </section>
     <!-- 고객만족후기 -->
-    <section class="max-w-6xl mx-auto py-[30px]">
+    <section class="max-w-6xl mx-auto py-20">
       <h2 class="text-4xl font-bold mb-10">고객만족후기</h2>
       <article>
         <ReviewComp />
