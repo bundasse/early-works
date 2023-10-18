@@ -175,7 +175,7 @@
     </section>
     <!-- 푸터 -->
     <FooterComp />
-    <div class="fixed right-8 bottom-8 w-12 h-12">
+    <div class="fixed right-8 bottom-8 w-12 h-12" @click="top()">
       <img :src="require(`@/assets/icon/top_arrow.svg`)" alt="">
     </div>
   </div>
@@ -219,6 +219,9 @@ export default {
     salePrice(sale, price){
       const cal =  Math.round((100-Number(sale))*Number(price)/10000)*100;
       return cal
+    },
+    top(){
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   },
   setup() {
