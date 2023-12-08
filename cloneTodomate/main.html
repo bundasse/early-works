@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo mate</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 앱 사용안내 모달 -->
+    <div class="modal on">
+        <div class="container">
+            <div class="modal_inner1">
+                <p>검색에서 친구를 찾아 추가하고 서로를 응원해보세요!</p>
+            </div>
+            <div class="modal_inner2">
+                <p>카테고리를 클릭해 일정을 추가해보세요. 할 일을 끝냈다면 왼쪽 아이콘을 눌러주세요!</p>
+            </div>
+        </div>
+    </div>
+    <!-- 탑 메뉴 -->
+    <div class="topMenu">
+        <button class="search">검색</button>
+        <button class="notification">알림</button>
+        <button class="gnb">메뉴</button>
+    </div>
+    <!-- 팔로잉 유저 목록 -->
+    <div class="userList">
+        <ul class="clearfix">
+            <li>
+                <a class="proPic on" href="#">나</a>
+                <p class="userName">나</p>
+            </li>
+            <li>
+                <a class="proPic" href="#"><img src="images/userIcon/icon1.png" alt="로봇"></a>
+                <p class="userName">로봇</p>
+            </li>
+            <li>
+                <a class="proPic" href="#"><img src="images/userIcon/icon2.jpg" alt="토끼좋아맨"></a>
+                <p class="userName">토끼좋아맨</p>
+            </li>
+            <li>
+                <a class="proPic" href="#"></a>
+                <p class="userName"></p>
+            </li>
+        </ul>
+    </div>
+    <!-- 메인 -->
+    <div class="container">
+        <!-- 유저 정보 -->
+        <div class="userProfile clearfix">
+            <div class="myPic"><img src="images/userIcon/noIcon.jpg" alt="내 프로필 이미지"></div>
+            <div class="myText">
+                <p>나</p>
+                <span>프로필에 자기소개를 입력하세요.</span>
+            </div>
+            <div class="writeDiary">
+                <a href="#"><img src="images/btn_diary.png" alt="일기 쓰기"></a>
+            </div>
+        </div>
+        <!-- 달력 -->
+        <div class="calender clearfix">
+            <h3>2023년 2월 4주차</h3>
+            <div class="calTab">
+                <img src="images/btn_cal_prev.gif" alt="이전 주/달 보기">
+                <img src="images/btn_cal_next.gif" alt="다음 주/달 보기">
+                <div class="on">주</div>
+                <div>월</div>
+            </div>
+            <div class="tabContents">
+                <table class="workCal">
+                    <thead>
+                        <tr>
+                            <td class="today">월</td>
+                            <td>화</td>
+                            <td>수</td>
+                            <td>목</td>
+                            <td>금</td>
+                            <td>토</td>
+                            <td>일</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="calWork">
+                            <td class="today"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="calDate">
+                            <td class="today">20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="diaryCal">
+                    <thead>
+                        <tr>
+                            <td class="today">월</td>
+                            <td>화</td>
+                            <td>수</td>
+                            <td>목</td>
+                            <td>금</td>
+                            <td>토</td>
+                            <td>일</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="calWork">
+                            <td class="today">😄</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="calDate">
+                            <td class="today">20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- 탭 메뉴 -->
+        <div class="tabBar">
+            <input type="radio" name="tab" id="workTab" checked="checked">
+            <label for="workTab" class="contentType">할 일</label>
+            <input type="radio" name="tab" id="diaryTab">
+            <label for="diaryTab" class="contentType">일기</label>
+        </div>
+        <!-- 할 일 목록 -->
+        <div class="work">
+            <a href="#none" id="workAdd">
+                <p class="workCategory">
+                    <span>일반</span></p>
+            </a>
+            <ul id="workList">
+                <li>
+                    <label>
+                        <input type="checkbox">
+                        <i class="workIcon"></i>
+                        <span>할 일</span>
+                    </label>
+                </li>
+            </ul>
+            <p class="more"><a href="">카테고리 수정하기</a></p>
+        </div>
+    </div>
+    <!-- 자바 스크립트 -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
