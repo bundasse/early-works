@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>집반찬연구소/right</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M9.5005,18.3436 C9.3725,18.3436 9.2445,18.2946 9.1465,18.1976 C8.9515,18.0026 8.9515,17.6856 9.1465,17.4896 L14.9655,11.6716 L9.1465,5.8536 C8.9515,5.6576 8.9515,5.3416 9.1465,5.1466 C9.3415,4.9506 9.6585,4.9506 9.8545,5.1466 L16.0255,11.3186 C16.1195,11.4116 16.1725,11.5396 16.1725,11.6716 C16.1725,11.8046 16.1195,11.9316 16.0255,12.0256 L9.8545,18.1976 C9.7565,18.2946 9.6285,18.3436 9.5005,18.3436" id="path-1"></path>
+    </defs>
+    <g id="집반찬연구소/right" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#1D1D1B" xlink:href="#path-1"></use>
+        <g id="color/w" mask="url(#mask-2)" fill="#FFFFFF">
+            <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>
