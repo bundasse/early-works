@@ -1,0 +1,111 @@
+[{
+    "Banner" : ["부천 3대 봄꽃축제", "부천국제<br>애니메이션페스티벌", "부천국제만화축체", "복사골예술제", "부천필하모닉<br>오케스트라", "부천세계비보이대회"],
+    "Notice" : [
+        {
+            "title": "[입찰] 자막업무 대행 용역 선정 재공고",
+            "date" : "2023-04-10"
+        },
+        {
+            "title": "[입찰] 티켓시스템 개편 및 운영 용역 선정 재공고",
+            "date" : "2023-04-10"
+        },
+        {
+            "title": "부천국제판타스틱영화제 스태프 채용 합격자 발표 (대외협력팀, 프로그램팀, 초청팀)",
+            "date" : "2023-04-07"
+        },
+        {
+            "title": "[채용] 부천국제판타스틱영화제 4차 스태프 채용",
+            "date" : "2023-04-07"
+        },
+        {
+            "title": "[알림] 아카이브 자료 기증 이벤트 - 본인등판: BIFAN Moment",
+            "date" : "2023-04-03"
+        }
+    ],
+    "Webzine" : [
+        {
+            "title": "부천국제판타스틱영화제, 디지털 아카이브 구축 ing... 역대 자료 기증 이벤트 마련",
+            "date": "2023.04.03"
+        },
+        {
+            "title": "부천시 50주년 기념 ’부천 괴담 공모전‘ BIFAN·황금가지, 심사‧홍보‧이벤트 운용 협업",
+            "date": "2023.03.28"
+        },
+        {
+            "title": "제27회 부천국제판타스틱영화제, XR 섹션 ‘비욘드 리얼리티’ 상영작 4월 30일까지 공모!",
+            "date": "2023.03.22"
+        },
+        {
+            "title": "BIFAN 환상영화학교, 15년간 342명 졸업생 배출... 베를린·시체스영화제 등 초청받으며 주목",
+            "date": "2023.03.20"
+        },
+        {
+            "title": "<독약묘>, 홍콩-아시아 필름 파이낸싱 포럼(HAF) NAFF상 수상",
+            "date": "2023.03.16"
+        },
+        {
+            "title": "부천국제판타스틱영화제-TAICCA(대만콘텐츠진흥원), 아시아 인재 교류 위한 업무 협약 체결",
+            "date": "2023.03.13"
+        },
+        {
+            "title": "‘BIFAN의 진정한 팬이 되어주세요!’",
+            "date": "2023.03.13"
+        },
+        {
+            "title": "제27회 부천국제판타스틱영화제, ‘잇 프로젝트’ 최근 1년간 19편 영화화... 기회의 장으로 각광",
+            "date": "2023.03.09"
+        },
+        {
+            "title": "BIFAN-부천시, K-스토리 산업 선도도시 위한 ‘부천 괴담 공모전’ 개최",
+            "date": "2023.02.24"
+        },
+        {
+            "title": "부천국제판타스틱영화제-부천시 10개 동 간담회 진행",
+            "date": "2023.02.23"
+        },
+        {
+            "title": "‘판타스틱 진로 토크 콘서트’ 감독 장항준",
+            "date": "2023.02.16"
+        }],
+    "WebzineFix" : {
+        "title": "부천국제판타스틱영화제 후원회, 제27회 BIFAN 후원금 전달로 적극적인 응원 보내",
+        "subtitle" : "’제17대 BIFAN 후원회 3억 6584만원 현금 후원 약정 노인기·김태훈·안병일·윤용대 등 신규 임원 10명 위촉"
+    },
+    "SNS": [
+        {
+            "name" :"BIFAN 공식 인스타그램",
+            "link": "https://www.instagram.com/bifanofficial/",
+            "image": "sns_instargram.png"
+        },
+        {
+            "name" :"BIFAN 공식 유튜브 채널",
+            "link": "https://www.youtube.com/user/officialPiFan",
+            "image": "sns_youtube.png"
+        },
+        {
+            "name" :"BIFAN 오리지널 컨텐츠 비비빞 유튜브 채널",
+            "link": "https://www.youtube.com/channel/UCAQXECXwsN_whx3L_JFxS0w",
+            "image": "sns_add_icon.png"
+        },
+        {
+            "name" :"BIFAN 공식 트위터",
+            "link": "https://twitter.com/bifanofficial",
+            "image": "sns_twiter.png"
+        },
+        {
+            "name" :"BIFAN 공식 페이스북",
+            "link": "https://www.facebook.com/BIFANOfficial/",
+            "image": "sns_face.png"
+        }
+    ],
+    "footer": [
+        "경기도 부천시 길주로 210 판타스틱오피스",
+        "032-327-6313",
+        "032-322-9629"
+    ]
+},
+{
+    "Banner": [],
+    "footer" : ["Fantastic Office, 210 Gilju-ro, Bucheon-city, Gyeonggi-do, 14547, KOREA",
+    "Tel. +82-32-327-6313", "Fax. +82-32-322-9629"]
+}]
